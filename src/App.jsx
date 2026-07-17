@@ -2,7 +2,7 @@ import Navbar from './components/Hero/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import WhyChoose from './components/Hero/Navbar/Whychoose/Whychoose';
 import BestSelling from './components/BestSelling/BestSelling';
-import Experience from './components/experience/experience';
+import Experience from './components/Experience/Experience';
 import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
 
