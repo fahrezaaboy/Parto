@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
-import './WhyChoose.css';
+import './Whychoose.css';
 
 const FEATURES = [
   {
