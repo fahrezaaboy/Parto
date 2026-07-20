@@ -157,11 +157,9 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  color: #1e1e1e;
+  color: #000000;
   transition: background 0.3s ease, color 0.3s ease;
   z-index: 2;
-  border: none;
-  cursor: pointer;
 }
 
 .testimonials-arrow:hover {
@@ -170,9 +168,10 @@
 }
 
 .testimonials-arrow:disabled {
-  opacity: 0.35;
+  opacity: 1;
   cursor: not-allowed;
 }
+
 
 .testimonials-arrow--left {
   left: 70px; 

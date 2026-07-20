@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import slide1 from '../../assets/images/Testimoni/1.png';
 import slide2 from '../../assets/images/Testimoni/2.png';
 import slide3 from '../../assets/images/Testimoni/3.png';
@@ -134,7 +134,7 @@ export default function Testimonials() {
             disabled={!canPrev}
             aria-label="Previous testimonials"
           >
-            <FiChevronLeft size={24} />
+            <FiArrowLeft size={24} />
           </button>
 
           <div className="testimonials-slider-wrapper">
@@ -157,7 +157,7 @@ export default function Testimonials() {
             disabled={!canNext}
             aria-label="Next testimonials"
           >
-            <FiChevronRight size={24} />
+            <FiArrowRight size={24} />
           </button>
         </div>
       </div>
