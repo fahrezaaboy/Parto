@@ -48,7 +48,7 @@
 }
 
 .why-choose__link:hover {
-  gap: 12px;
+  gap: 8px;
 }
 
 @media (max-width: 1024px) {
