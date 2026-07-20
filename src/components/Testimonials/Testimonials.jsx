@@ -46,40 +46,52 @@ function TestimonialCard({ src, delay }) {
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
-  const [slideSize, setSlideSize] = useState(375);
+  const [slideSize, setSlideSize] = useState(0);
   const sliderRef = useRef(null);
 
   useEffect(() => {
     const updateLayout = () => {
       const width = window.innerWidth;
+      let newVisibleCount = 3;
+      let gap = 32;
+
       if (width <= 600) {
-        setVisibleCount(1);
+        newVisibleCount = 1;
+        gap = 0;
       } else if (width <= 900) {
-        setVisibleCount(2);
+        newVisibleCount = 2;
+        gap = 24;
       } else {
-        setVisibleCount(3);
+        newVisibleCount = 3;
+        gap = 32;
       }
+
+      setVisibleCount(newVisibleCount);
 
       if (sliderRef.current) {
         const card = sliderRef.current.querySelector('.testimonial-card');
         if (card) {
-          const rect = card.getBoundingClientRect();
-          setSlideSize(rect.width + 35);
+          const cardWidth = card.offsetWidth;
+          setSlideSize(cardWidth + gap);
         }
       }
     };
 
     updateLayout();
+    const resizeTimer = setTimeout(updateLayout, 100);
     window.addEventListener('resize', updateLayout);
-    return () => window.removeEventListener('resize', updateLayout);
+    return () => {
+      window.removeEventListener('resize', updateLayout);
+      clearTimeout(resizeTimer);
+    };
   }, []);
 
   useEffect(() => {
     const maxIndex = Math.max(0, slides.length - visibleCount);
     if (activeIndex > maxIndex) {
-      setActiveIndex(maxIndex);
+      setActiveIndex(0);
     }
-  }, [activeIndex, visibleCount]);
+  }, [visibleCount]);
 
   const maxIndex = Math.max(0, slides.length - visibleCount);
   const canPrev = activeIndex > 0;
