@@ -157,7 +157,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  color: #000000;
+  color: #1e1e1e;
   transition: background 0.3s ease, color 0.3s ease;
   z-index: 2;
 }
